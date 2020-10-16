@@ -26,6 +26,75 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.text-emphasis {
+	font-weight: bold;
+	color: darkred;
+}
+
+.form-control-center
+{
+  display: inline;
+}
+
+.suggested-category {
+  cursor: pointer;
+  height: 20px;
+  font-size: 10px !important;
+  padding: 6px 10px 20px 10px  !important;
+}
+
+.bootstrap-tagsinput > .suggested-category {
+  cursor: pointer;
+  height: 2px;
+  font-size: 10px !important;
+  padding: 0px 10px 20px 10px  !important;
+}
+
+.picking-subject{
+  width: 500px !important;
+}
+
+
+.badge-must{
+  cursor: -webkit-grab;
+  color: #fff;
+  background-color: #ce3a04;
+}
+
+.badge-should{
+  cursor: -webkit-grab;
+  color: #fff;
+  background-color: #da9006;
+}
+
+
+.badge-could{
+  cursor: -webkit-grab;
+  color: #fff;
+  background-color: #dabe1f;
+}
+
+
+.badge-wont{
+  cursor: -webkit-grab;
+  color: #000;
+  background-color: #fdfdfd;
+  border: 1px solid #999;;
+}
+
+.option{
+  text-align: left !important;
+  line-height: 1em;
+}
+
+.option > .url{
+  font-size: 10px;
+  
+  
+}
+
+
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -67,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  padding: 15px 0;
+  padding: 1px 0;
   background: rgba(255, 255, 255, 0.95);
 }
 
@@ -335,7 +404,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   position: relative;
   overflow: hidden;
-  padding: 140px 0 100px 0;
+  padding: 80px 0 40px 0;
   margin-bottom: -75px;
 }
 
@@ -434,7 +503,7 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 5px 0;
   overflow: hidden;
 }
 
@@ -444,13 +513,13 @@ section {
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 5px;
 }
 
 .section-title h2 {
   font-size: 32px;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding-bottom: 0;
   color: #5777ba;
   font-family: "Poppins", sans-serif;
@@ -732,8 +801,8 @@ section {
 }
 
 .pricing .box {
-  padding: 40px;
-  margin-bottom: 30px;
+  padding: 15px 15px;
+  margin-bottom: 10px;
   box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
   background: #fff;
   text-align: center;
@@ -789,7 +858,7 @@ section {
   text-decoration: line-through;
 }
 
-.pricing .get-started-btn {
+.get-started-btn {
   background: #47536e;
   display: inline-block;
   padding: 6px 30px;
@@ -811,7 +880,7 @@ section {
   margin: -30px -5px 0 -5px;
 }
 
-.pricing .featured .get-started-btn {
+.get-started-btn {
   background: #5777ba;
 }
 
