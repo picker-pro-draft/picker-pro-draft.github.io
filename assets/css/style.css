@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
 }
 
-.option{
+.option {
   text-align: left !important;
   line-height: 1em;
 }
@@ -104,6 +104,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 5px;
   margin-top: 5px;
 }
+
 
 
 /*--------------------------------------------------------------
@@ -807,9 +808,7 @@ section {
 /*--------------------------------------------------------------
 # Pricing
 --------------------------------------------------------------*/
-.pricing .row {
-  padding-top: 40px;
-}
+
 
 .pricing .box {
   padding: 15px 15px;
