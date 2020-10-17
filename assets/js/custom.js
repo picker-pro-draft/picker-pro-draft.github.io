@@ -8,6 +8,8 @@ $(document).ready(function(){
     $('#picking-subject').tagsinput('removeAll');
     $('#picking-subject').tagsinput('add', $(this).text());
   });
+
+  $('#picking-subject').tagsinput('add', 'Smartphone');
 });
 
 var prevScrollpos = window.pageYOffset;

@@ -58,20 +58,23 @@ h1, h2, h3, h4, h5, h6 {
 .badge-must{
   cursor: -webkit-grab;
   color: #fff;
-  background-color: #ce3a04;
+  background-color: #0f7217;
+  font-size: 0.9rem;
 }
 
 .badge-should{
   cursor: -webkit-grab;
   color: #fff;
-  background-color: #da9006;
+  background-color: #97ba19;
+  font-size: 0.9rem;
 }
 
 
 .badge-could{
   cursor: -webkit-grab;
-  color: #fff;
-  background-color: #dabe1f;
+  color: #000;
+  background-color: #fffa5b;
+  font-size: 0.9rem;
 }
 
 
@@ -80,6 +83,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
   background-color: #fdfdfd;
   border: 1px solid #999;;
+  font-size: 0.9rem;
 }
 
 .option{
