@@ -88,11 +88,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .option > .url{
-  font-size: 10px;
-  
-  
+  font-size: 10px; 
 }
 
+.property{
+  font-weight: bold;
+}
+
+.product-image{
+  border: 1px solid #000;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
 
 
 /*--------------------------------------------------------------
