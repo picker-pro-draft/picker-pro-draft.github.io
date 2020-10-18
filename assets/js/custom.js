@@ -31,9 +31,28 @@ $(document).ready(function () {
 
         updateOrders();
       }
-
-
-    });
+      if (target === null) {
+        if (source.classList.contains('criteria-met')) {
+          removeCriteriaByText(source, el.getElementsByClassName('badge')[0].innerText);
+        }
+      }
+    })
+    .on('drag', function (el, source) {
+      if (source.classList.contains('criteria-definition')) {
+        $('.criteria-met, .criteria-definition').addClass('drop-area-active');
+        $('.drop-hint').fadeIn();
+      }
+      if (source.classList.contains('criteria-met')) {
+        $('.criteria-met, .criteria-definition').addClass('drop-area-active');
+        $('.remove-hint').fadeIn();
+      }
+    })
+    .on('dragend', function (el) {
+      $('.criteria-met, .criteria-definition').removeClass('drop-area-active');
+      $('.drop-hint').fadeOut();
+      $('.remove-hint').fadeOut();
+    })
+    ;
 });
 
 function updateOrders() {
@@ -46,7 +65,7 @@ function updateOrders() {
     var li = ul.children("li");
 
     li.detach().sort((a, b) => (getScore(a) < getScore(b) ? 1 : -1));
-    ul.append(li);
+    ul.prepend(li);
 
   }
 }
@@ -101,17 +120,40 @@ function preventDuplicates(el, target, source) {
 }
 
 function removeFromSourceIfNeeded(el, target, source) {
-  if (source === target) {
+  if (isReording(source, target)) {
     return;
   }
-  let remainingOptions = source.getElementsByClassName('badge');
+  if (isAssigingCriteriaToOption(source, target)) {
+    return;
+  }
+
+  removeCriteriaByText(source, el.getElementsByClassName('badge')[0].innerText);
+}
+
+function removeCriteriaByText(container, text) {
+  let remainingOptions = container.getElementsByClassName('badge');
   for (let i = 0; i < remainingOptions.length; i++) {
-    if (remainingOptions[i].innerText === el.getElementsByClassName('badge')[0].innerText) {
+    if (remainingOptions[i].innerText === text) {
       remainingOptions[i].closest('li').remove();
     }
   }
 }
 
+function isReording(source, target) {
+  //moving within the same container
+  if (source === target) {
+    return true;
+  }
+  return false;
+}
+
+function isAssigingCriteriaToOption(source, target) {
+  //moving from list of criteria to a specific product
+  if (source.classList.contains('criteria-definition') && target.classList.contains('criteria-met')) {
+    return true;
+  }
+  return false;
+}
 
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {

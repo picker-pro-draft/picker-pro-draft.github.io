@@ -39,8 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 .suggested-category {
   cursor: pointer;
   height: 20px;
-  font-size: 10px !important;
-  padding: 6px 10px 20px 10px  !important;
+  padding: 0px 10px 20px 10px  !important;
 }
 
 .bootstrap-tagsinput > .suggested-category {
@@ -105,8 +104,27 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 5px;
 }
 
+.drop-area-active{
+  border: 3px dotted #cacaca;
+    border-radius: 5%;
+}
 
+.criteria-definition{
+  padding: 10px!important;
+}
 
+.criteria-met{
+  padding: 10px!important;
+}
+
+.drop-hint{
+  font-size: smaller;
+}
+
+.hint{
+  font-size: smaller;
+  line-height: 0.3rem;
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
