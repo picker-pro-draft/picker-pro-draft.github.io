@@ -43,7 +43,7 @@ $(document).ready(function () {
         $('.drop-hint').fadeIn();
       }
       if (source.classList.contains('criteria-met')) {
-        $('.criteria-met, .criteria-definition').addClass('drop-area-active');
+        $('.criteria-met').addClass('drop-area-active');
         $('.remove-hint').fadeIn();
       }
     })
