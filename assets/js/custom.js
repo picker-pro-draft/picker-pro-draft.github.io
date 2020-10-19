@@ -13,9 +13,9 @@ $(document).ready(function () {
 
   $('.add-criteria').click(function () {
     let inputValue = $(this).closest('.input-group').find('input').val();
-    let list =  $(this).closest('.box').find('.criteria-list');
+    let list = $(this).closest('.box').find('.criteria-list');
     let priority = list.data('criteria-type');
-    $(list).append('<li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-'+ priority+'">'+ inputValue+'</span></li>')
+    $(list).append('<li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-' + priority + '">' + inputValue + '</span></li>')
   });
 
 
@@ -67,17 +67,24 @@ function handleCriteriaRemoval(el, source) {
     removeCriteriaByText(source, el.getElementsByClassName('badge')[0].innerText);
   }
   if (source.classList.contains('criteria-definition')) {
-    $('#ConfirmCriteriaRemovalModal').modal().on("click", ".btn-danger", function () {
-      let text = el.getElementsByClassName('badge')[0].innerText;
+    let text = el.getElementsByClassName('badge')[0].innerText;
+    let allMet = $('.criteria-met .badge-criteria')
+    let isCriteriaInUse = false;
 
-      let allBadges = document.getElementsByClassName('badge-criteria');
-      for (let i = 0; i < allBadges.length; i++) {
-        if (allBadges[i].innerText === text) {
-          allBadges[i].closest('li').remove();
-        }
+    for (let i = 0; i < allMet.length; i++) {
+      if (allMet[i].innerText === text) {
+        isCriteriaInUse = true;
       }
+    }
 
-    });
+    if (isCriteriaInUse) {
+      $('#ConfirmCriteriaRemovalModal').modal().on("click", ".btn-danger", function () {
+        removeCriteriaByText($('.criteria-definition'), text);
+        removeCriteriaByText($('.criteria-met'), text);
+      })
+    } else{
+      removeCriteriaByText($('.criteria-definition'), text);
+    }
 
   }
 }
@@ -158,7 +165,7 @@ function removeFromSourceIfNeeded(el, target, source) {
 }
 
 function removeCriteriaByText(container, text) {
-  let remainingOptions = container.getElementsByClassName('badge');
+  let remainingOptions = $(container).find('.badge');
   for (let i = 0; i < remainingOptions.length; i++) {
     if (remainingOptions[i].innerText === text) {
       remainingOptions[i].closest('li').remove();
