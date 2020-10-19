@@ -32,9 +32,7 @@ $(document).ready(function () {
         updateOrders();
       }
       if (target === null) {
-        if (source.classList.contains('criteria-met')) {
-          removeCriteriaByText(source, el.getElementsByClassName('badge')[0].innerText);
-        }
+        handleCriteriaRemoval(el, source);
       }
     })
     .on('drag', function (el, source) {
@@ -54,6 +52,27 @@ $(document).ready(function () {
     })
     ;
 });
+
+
+function handleCriteriaRemoval(el, source){
+  if (source.classList.contains('criteria-met')) {
+    removeCriteriaByText(source, el.getElementsByClassName('badge')[0].innerText);
+  }
+  if (source.classList.contains('criteria-definition')) {
+    $('#ConfirmCriteriaRemovalModal').modal().on("click",".btn-danger", function(){
+      let text = el.getElementsByClassName('badge')[0].innerText;
+
+      let allBadges = document.getElementsByClassName('badge-criteria');
+      for (let i = 0; i < allBadges.length; i++) {
+        if (allBadges[i].innerText === text) {
+          allBadges[i].closest('li').remove();
+        }
+      }
+
+   });
+    
+  }
+}
 
 function updateOrders() {
 
