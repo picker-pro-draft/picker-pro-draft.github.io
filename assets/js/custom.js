@@ -108,7 +108,7 @@ function updateColors(el, target) {
 
     let type = target.dataset.criteriaType;
     let badge = el.getElementsByClassName('badge')[0];
-    let desiredClass = "badge badge-" + type;
+    let desiredClass = "badge badge-criteria badge-" + type;
     badge.className = desiredClass;
 
     let allBadges = document.getElementsByClassName('badge-criteria');
