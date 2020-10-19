@@ -11,6 +11,14 @@ $(document).ready(function () {
 
   $('#picking-subject').tagsinput('add', 'Smartphone');
 
+  $('.add-criteria').click(function () {
+    let inputValue = $(this).closest('.input-group').find('input').val();
+    let list =  $(this).closest('.box').find('.criteria-list');
+    let priority = list.data('criteria-type');
+    $(list).append('<li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-'+ priority+'">'+ inputValue+'</span></li>')
+  });
+
+
   dragula(
     {
       isContainer: function (el) {
@@ -54,12 +62,12 @@ $(document).ready(function () {
 });
 
 
-function handleCriteriaRemoval(el, source){
+function handleCriteriaRemoval(el, source) {
   if (source.classList.contains('criteria-met')) {
     removeCriteriaByText(source, el.getElementsByClassName('badge')[0].innerText);
   }
   if (source.classList.contains('criteria-definition')) {
-    $('#ConfirmCriteriaRemovalModal').modal().on("click",".btn-danger", function(){
+    $('#ConfirmCriteriaRemovalModal').modal().on("click", ".btn-danger", function () {
       let text = el.getElementsByClassName('badge')[0].innerText;
 
       let allBadges = document.getElementsByClassName('badge-criteria');
@@ -69,8 +77,8 @@ function handleCriteriaRemoval(el, source){
         }
       }
 
-   });
-    
+    });
+
   }
 }
 
