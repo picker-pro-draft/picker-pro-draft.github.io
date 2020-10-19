@@ -12,10 +12,28 @@ $(document).ready(function () {
   $('#picking-subject').tagsinput('add', 'Smartphone');
 
   $('.add-criteria').click(function () {
-    let inputValue = $(this).closest('.input-group').find('input').val();
+    let input = $(this).closest('.input-group').find('input');
+    if (isEmptyOrSpaces(input.val())){
+      return;
+    }
     let list = $(this).closest('.box').find('.criteria-list');
     let priority = list.data('criteria-type');
-    $(list).append('<li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-' + priority + '">' + inputValue + '</span></li>')
+    let existing = $(list).find('.badge');
+
+    let isAlreadyDefined = false;
+
+    for (let i = 0; i < existing.length; i++) {
+      if (existing[i].innerText === input.val()) {
+        isAlreadyDefined = true;
+      }
+    }
+
+    if (!isAlreadyDefined) {
+      $(list).append('<li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-' + priority + '">' + input.val() + '</span></li>')
+    }
+    $(input).val('');
+    
+
   });
 
 
@@ -82,7 +100,7 @@ function handleCriteriaRemoval(el, source) {
         removeCriteriaByText($('.criteria-definition'), text);
         removeCriteriaByText($('.criteria-met'), text);
       })
-    } else{
+    } else {
       removeCriteriaByText($('.criteria-definition'), text);
     }
 
@@ -200,3 +218,6 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 }
 
+function isEmptyOrSpaces(str){
+  return str === null || str.match(/^ *$/) !== null;
+}
