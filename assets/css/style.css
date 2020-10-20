@@ -85,6 +85,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
 }
 
+.remove-option{
+  cursor: pointer;
+}
+
 .option {
   text-align: left !important;
   line-height: 1em;
@@ -93,6 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 .option-url{
   font-size: 12px; 
   display: flex;
+  justify-content: space-between;
 }
 
 .property{
@@ -116,10 +121,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .criteria-met{
   padding: 10px!important;
-}
-
-.drop-hint{
-  font-size: smaller;
 }
 
 .hint{

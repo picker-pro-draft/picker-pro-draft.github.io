@@ -5,6 +5,10 @@ $(document).ready(function () {
 
   $('#InitialInfoModal').modal();
 
+  $('.remove-option').on("click", function () {
+    removeOption(this);
+  });
+
   $('.suggested-category').click(function () {
     $('#PickingSubject').tagsinput('removeAll');
     $('#PickingSubject').tagsinput('add', $(this).text());
@@ -61,25 +65,21 @@ $(document).ready(function () {
       if (target === null) {
         handleCriteriaRemoval(el, source);
       }
+      showEmptyDropPlace();
     })
     .on('drag', function (el, source) {
       if (source.classList.contains('criteria-definition')) {
+        $('.drop-hint-initial').hide();
         $('.criteria-met, .criteria-definition').addClass('drop-area-active');
         $('.drop-hint').fadeIn();
-        $('.drop-hint-initial').hide();
-        
+
       }
       if (source.classList.contains('criteria-met')) {
         $('.criteria-met').addClass('drop-area-active');
         $('.remove-hint').fadeIn();
+        $(source).find('.drop-hint-initial').hide();
       }
-    })
-    .on('dragend', function (el) {
-      $('.criteria-met, .criteria-definition').removeClass('drop-area-active');
-      $('.drop-hint').fadeOut();
-      $('.remove-hint').fadeOut();
-    })
-    ;
+    });
 });
 
 
@@ -90,7 +90,12 @@ function addOption(addButton) {
   }
 
   let template = $('#OptionTemplate').clone();
+  template.find('.remove-option').on("click", function () {
+    removeOption(this);
+  });
   template.attr("id", "");
+
+  template.find('.criteria-met').addClass('drop-area-active');
 
   fetch("https://source.unsplash.com/200x130/?phone&sig=" + Math.random()).then((response) => {
     $(template).find('.product-image').attr("src", response.url);
@@ -101,16 +106,34 @@ function addOption(addButton) {
   $('#OptionsList').prepend(template);
   $(template).show();
 
-  $(template).find(".option-url > a").text(input.val());
-  $.get("https://uzby.com/api.php?min=6&max=12", function (data) {
+  // $(template).find(".option-url > a").text(input.val());
+  // $.get("https://uzby.com/api.php?min=6&max=12", function (data) {
 
-    let title = $(template).find(".option-title");
-    title.text(data);
-  });
+  let title = $(template).find(".option-title");
+  title.text(input.val());
+  // });
 
   $(input).val('');
 }
 
+
+function showEmptyDropPlace() {
+  $('.criteria-met, .criteria-definition').removeClass('drop-area-active');
+  $('.drop-hint').fadeOut();
+  $('.drop-hint-initial').fadeOut();
+  $('.remove-hint').fadeOut();
+
+  $('.criteria-met').each(function () {
+    if ($(this).find('.badge').length === 0) {
+      $(this).addClass('drop-area-active');
+      $(this).find('.drop-hint-initial').fadeIn();
+    }
+  });
+}
+
+function removeOption(removeButton) {
+  $(removeButton).closest('.box').fadeOut(function () { $(this).remove(); });
+}
 
 function handleCriteriaRemoval(el, source) {
   if (source.classList.contains('criteria-met')) {
@@ -135,7 +158,6 @@ function handleCriteriaRemoval(el, source) {
     } else {
       removeCriteriaByText($('.criteria-definition'), text);
     }
-
   }
 }
 
