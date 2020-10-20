@@ -143,11 +143,11 @@
                       <button class="btn btn-outline-secondary add-criteria" type="button">Add</button>
                     </div>
                   </div>
-                  <ul class="criteria-list criteria-definition" data-criteria-type="must">
+                  <ul class="criteria-list criteria-definition" data-criteria-type="must" id="CriteriaListMust">
                     <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">Cost less than 1000$</span></li>
                     <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">USB-C</span></li>
                     <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">Android + Google</span></li>
-                    <span class="drop-hint" style="display: none;">Drop to change the priority</span>
+                    <li class="drop-hint" style="display: none;" >Drop to change the priority<br/>or drop to the side to remove</li>
                   </ul>
                 </div>
               </div>
@@ -171,7 +171,7 @@
                     <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-should">Battery over 4000mAh</span></li>
                     <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-should">Physical
                         Buttons</span></li>
-                    <span class="drop-hint" style="display: none;">Drop to change the priority</span>
+                        <li class="drop-hint" style="display: none;" >Drop to change the priority<br/>or drop to the side to remove</li>
                   </ul>
                 </div>
               </div>
@@ -193,7 +193,8 @@
                     </li>
                     <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-could">Cool design</span>
                     </li>
-                    <span class="drop-hint" style="display: none;">Drop to change the priority</span>
+                    <li class="drop-hint" style="display: none;" >Drop to change the priority<br/>or drop to the side to remove</li>
+
                   </ul>
                 </div>
               </div>
@@ -213,7 +214,7 @@
                   <ul class="criteria-list criteria-definition" data-criteria-type="wont">
                     <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-wont">Ip67</span></li>
                     <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-wont">Tough case</span></li>
-                    <span class="drop-hint" style="display: none;" >Drop to change the priority</span>
+                    <li class="drop-hint" style="display: none;" >Drop to change the priority<br/>or drop to the side to remove</li>
                   </ul>
                 </div>
               </div>
@@ -247,37 +248,42 @@
 <div id="OptionsList">
 
             <div class="box  m-2" id="OptionTemplate" style="display: none;">
+              <span class="option-url">
+                <a href="#"></a>
+              </span>
               <div class="row mt-0">
 
                 <div class="col-lg-3">
-                  <img src="https://image.freepik.com/free-psd/smartphone-mock-up-isolated_1310-1576.jpg"
+                  <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <img src="" style="display: none;"
                     class="product-image" width="200" />
                 </div>
                 <div class="option col-lg-5">
                   <h2 class="option-title"></h2>
-                  <span class="url">
-                    <a href="#"></a>
-                  </span>
+                  
 
                   <div>
                     <span class="property">Price: </span>
-                    <span class="property-value">600$ </span>
+                    <span class="property-value">999</span>
                     <div>
                       <span class="property">Screen: </span>
-                      <span class="property-value">OLED</span>
+                      <span class="property-value">Some value</span>
                     </div>
                   </div>
                   <div>
                     <span class="property">Battery: </span>
-                    <span class="property-value">3500mAh </span>
+                    <span class="property-value">4000maH</span>
                   </div>
                   <div>
                     <span class="property">More paramters: </span>
-                    <span class="property-value">Extracted from a shop by Picker.pro </span>
+                    <span class="property-value">Something else</span>
                   </div>
                 </div>
                 <div class="option-criteria col-lg-4">
-                  <ul class="criteria-list criteria-met">
+                  <ul class="criteria-list criteria-met drop-area-active">
+                    <span class="drop-hint-initial"  >Drag and and drop criteria from your list</span>
                     <span class="drop-hint" style="display: none;" >Drop here if criteria is met</span>
                     <span class="remove-hint" style="display: none;" >Drop anywhere to remove</span>
                   </ul>
@@ -288,6 +294,9 @@
 
 
             <div class="box  m-2">
+              <span class="option-url">
+                <a href="#">https://image.freepik.com/free-psd/smartphone-mock-up-isolated_1310-1576.jpg</a>
+              </span>
               <div class="row mt-0">
 
                 <div class="col-lg-3">
@@ -296,9 +305,7 @@
                 </div>
                 <div class="option col-lg-5">
                   <h2>MyPhone XXL</h2>
-                  <span class="url">
-                    <a href="#">https://www.freepik.com/free-psd/smartphone-mock-.....</a>
-                  </span>
+                  
 
                   <div>
                     <span class="property">Price: </span>
@@ -333,6 +340,9 @@
 
 
             <div class="box  m-2">
+              <span class="option-url">
+                <a href="#">https://www.freevector.com/uploads/vector/preview/12139/FreeVector-HTC-Desire-Phone.jpg</a>
+              </span>
               <div class="row mt-0">
                 <div class="col-lg-3">
                   <img src="https://www.freevector.com/uploads/vector/preview/12139/FreeVector-HTC-Desire-Phone.jpg"
@@ -340,9 +350,7 @@
                 </div>
                 <div class="option col-lg-5">
                   <h2>Samyang S666</h2>
-                  <span class="url">
-                    <a href="#">https://www.freepik.com/free-psd/smartphone-mock-.....</a>
-                  </span>
+                  
 
                   <div>
                     <span class="property">Price: </span>
@@ -374,6 +382,9 @@
             </div>
 
             <div class="box  m-2">
+              <span class="option-url">
+                <a href="#">https://www.freevector.com/uploads/vector/preview/1631/FreeVector-Motorola-Phone.jpg</a>
+              </span>
               <div class="row mt-0">
                 <div class="col-lg-3">
                   <img src="https://www.freevector.com/uploads/vector/preview/1631/FreeVector-Motorola-Phone.jpg"
@@ -381,9 +392,7 @@
                 </div>
                 <div class="option col-lg-5">
                   <h2>Fotorola Mold</h2>
-                  <span class="url">
-                    <a href="#">https://www.freepik.com/free-psd/smartphone-mock-.....</a>
-                  </span>
+                 
 
                   <div>
                     <span class="property">Price: </span>
@@ -415,6 +424,9 @@
             </div>
 
             <div class="box m-2">
+              <span class="option-url">
+                <a href="#">https://www.freevector.com/uploads/vector/preview/16038/FreeVector-Smart-Phone-Render.jpg</a>
+              </span>
               <div class="row mt-0">
                 <div class="col-lg-3">
                   <img src="https://www.freevector.com/uploads/vector/preview/16038/FreeVector-Smart-Phone-Render.jpg"
@@ -422,9 +434,7 @@
                 </div>
                 <div class="option col-lg-5">
                   <h2>Nookia 3311</h2>
-                  <span class="url">
-                    <a href="#">https://www.freepik.com/free-psd/smartphone-mock-.....</a>
-                  </span>
+                
 
                   <div>
                     <span class="property">Price: </span>
@@ -572,6 +582,7 @@
 <!-- Template Main JS File -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/driver.js/0.9.8/driver.min.js" integrity="sha512-TMCPpR1wPPr92/7kiF88j9uTWczLpHyUTzt8sScGyN2btq/xWN22GjsdgNfUIMDtXV5WXUZ4s2OThcgpVxQv4w==" crossorigin="anonymous"></script>
 
+  <script src="assets/js/helpers.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/tour.js"></script>

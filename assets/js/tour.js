@@ -37,7 +37,7 @@ $(document).ready(function () {
       element: '#InputMust',
       popover: {
         title: "Hint",
-        description: "(You can add some more, or drag to change their priority)",
+        description: "You can add some more criteria!",
         position: 'top-center'
       }
       , onNext: function (el) {
@@ -45,14 +45,25 @@ $(document).ready(function () {
       },
     },
     {
-      element: "#OptionsPanel",
+      element: '#CriteriaListMust',
       popover: {
-        title: "Step three",
-        description: "You added some of the smartphones you think are cool",
+        title: "Hint",
+        description: "... or drag them to change their priority,<br/>or even drop outside to remove them!",
         position: 'top-center'
       }
       , onNext: function (el) {
         moveToStep(driver,4);
+      },
+    },
+    {
+      element: "#OptionsPanel",
+      popover: {
+        title: "Step three",
+        description: "And then you added some of the smartphones you think are cool..",
+        position: 'top-center'
+      }
+      , onNext: function (el) {
+        moveToStep(driver,5);
       },
     },
 
@@ -64,7 +75,7 @@ $(document).ready(function () {
         position: 'top-center'
       }
       , onNext: function (el) {
-        moveToStep(driver,5);
+        moveToStep(driver,6);
       },
     },
     {
@@ -76,7 +87,7 @@ $(document).ready(function () {
         position: 'top-center'
       }
       , onNext: function (el) {
-        moveToStep(driver,6);
+        moveToStep(driver,7);
       },
     },
     {
@@ -96,7 +107,7 @@ $(document).ready(function () {
         position: 'top-center'
       }
       , onNext: function (el) {
-        moveToStep(driver,7);
+        moveToStep(driver,8);
       },
     }
   ]);
@@ -113,14 +124,12 @@ $(document).ready(function () {
     setCookie('tourStep', 0);
     driver.start();
   });
-
-
 });
 
 function moveToStep(driver, step){
   driver.preventMove();
   setCookie('tourStep', step);
-  if (step < 7){
+  if (step < 8){
     driver.start(step );
   } else{
     driver.reset();

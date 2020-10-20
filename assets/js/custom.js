@@ -2,7 +2,7 @@ $(document).ready(function () {
   $('#PickingSubject').tagsinput({
     tagClass: 'get-started-btn suggested-category'
   });
- 
+
   $('#InitialInfoModal').modal();
 
   $('.suggested-category').click(function () {
@@ -14,7 +14,7 @@ $(document).ready(function () {
 
   $('.add-criteria').click(function () {
     let input = $(this).closest('.input-group').find('input');
-    if (isEmptyOrSpaces(input.val())){
+    if (isEmptyOrSpaces(input.val())) {
       return;
     }
     let list = $(this).closest('.box').find('.criteria-list');
@@ -35,22 +35,8 @@ $(document).ready(function () {
     $(input).val('');
   });
 
-  $('#AddOptionButton').click(function () {
-    let input = $(this).closest('.input-group').find('input');
-    if (isEmptyOrSpaces(input.val())){
-      return;
-    }
-    
-    let template = $('#OptionTemplate').clone();
+  $('#AddOptionButton').click(function () { addOption(this); });
 
-
-
-    $('#OptionsList').prepend(template);
-    $(template).show();
-
-
-    $(input).val('');
-  });
 
   dragula(
     {
@@ -80,6 +66,8 @@ $(document).ready(function () {
       if (source.classList.contains('criteria-definition')) {
         $('.criteria-met, .criteria-definition').addClass('drop-area-active');
         $('.drop-hint').fadeIn();
+        $('.drop-hint-initial').hide();
+        
       }
       if (source.classList.contains('criteria-met')) {
         $('.criteria-met').addClass('drop-area-active');
@@ -93,6 +81,35 @@ $(document).ready(function () {
     })
     ;
 });
+
+
+function addOption(addButton) {
+  let input = $(addButton).closest('.input-group').find('input');
+  if (isEmptyOrSpaces(input.val())) {
+    return;
+  }
+
+  let template = $('#OptionTemplate').clone();
+  template.attr("id", "");
+
+  fetch("https://source.unsplash.com/200x130/?phone&sig=" + Math.random()).then((response) => {
+    $(template).find('.product-image').attr("src", response.url);
+    $(template).find('.product-image').show();
+    $(template).find('.spinner-border').hide();
+  });
+
+  $('#OptionsList').prepend(template);
+  $(template).show();
+
+  $(template).find(".option-url > a").text(input.val());
+  $.get("https://uzby.com/api.php?min=6&max=12", function (data) {
+
+    let title = $(template).find(".option-title");
+    title.text(data);
+  });
+
+  $(input).val('');
+}
 
 
 function handleCriteriaRemoval(el, source) {
@@ -231,31 +248,4 @@ window.onscroll = function () {
     document.getElementById("header").style.top = "-50px";
   }
   prevScrollpos = currentScrollPos;
-}
-
-function isEmptyOrSpaces(str){
-  return str === null || str.match(/^ *$/) !== null;
-}
-
-function setCookie(name,value,days) {
-  var expires = "";
-  if (days) {
-      var date = new Date();
-      date.setTime(date.getTime() + (days*24*60*60*1000));
-      expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-}
-function getCookie(name) {
-  var nameEQ = name + "=";
-  var ca = document.cookie.split(';');
-  for(var i=0;i < ca.length;i++) {
-      var c = ca[i];
-      while (c.charAt(0)==' ') c = c.substring(1,c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-  }
-  return null;
-}
-function eraseCookie(name) {   
-  document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
