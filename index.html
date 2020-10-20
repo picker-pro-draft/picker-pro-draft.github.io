@@ -234,7 +234,7 @@
                     placeholder="Provide a product URL or just type what you think is an option..."
                     aria-label="Add criteria" aria-describedby="basic-addon2">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button">Add</button>
+                    <button class="btn btn-outline-secondary" id="AddOptionButton" type="button">Add</button>
                   </div>
                 </span>
               </span>
@@ -243,6 +243,47 @@
 
             </div>
 
+
+<div id="OptionsList">
+
+            <div class="box  m-2" id="OptionTemplate" style="display: none;">
+              <div class="row mt-0">
+
+                <div class="col-lg-3">
+                  <img src="https://image.freepik.com/free-psd/smartphone-mock-up-isolated_1310-1576.jpg"
+                    class="product-image" width="200" />
+                </div>
+                <div class="option col-lg-5">
+                  <h2 class="option-title"></h2>
+                  <span class="url">
+                    <a href="#"></a>
+                  </span>
+
+                  <div>
+                    <span class="property">Price: </span>
+                    <span class="property-value">600$ </span>
+                    <div>
+                      <span class="property">Screen: </span>
+                      <span class="property-value">OLED</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="property">Battery: </span>
+                    <span class="property-value">3500mAh </span>
+                  </div>
+                  <div>
+                    <span class="property">More paramters: </span>
+                    <span class="property-value">Extracted from a shop by Picker.pro </span>
+                  </div>
+                </div>
+                <div class="option-criteria col-lg-4">
+                  <ul class="criteria-list criteria-met">
+                    <span class="drop-hint" style="display: none;" >Drop here if criteria is met</span>
+                    <span class="remove-hint" style="display: none;" >Drop anywhere to remove</span>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
 
 
@@ -421,6 +462,7 @@
           </div>
 
         </div>
+      </div>
       </div>
     </section>
 
