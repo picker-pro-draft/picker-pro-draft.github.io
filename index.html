@@ -30,6 +30,8 @@
     crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.css" integrity="sha512-zlYhSecphd+kwRzeCOyj7/u3HZIQ3Q0NP7AN7ZEKhYTdi0AQOGGbc7eA3I/mUffqjdr8G1/9xoS478h+I0MQGg==" crossorigin="anonymous" />
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/driver.js/0.9.8/driver.min.css" integrity="sha512-yQuTmOu0Rm68Udrrd2uqDvHc/xzvQxJoNzYgLn7SK+EpPuEKZu82S44D2G++HLiz6lhUShgJPOri7zvRTVtyZQ==" crossorigin="anonymous" />
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -81,6 +83,8 @@
             <h1>Make your choices wisely</h1>
             <h2>Pick the right products or ideas by applying <span class="text-emphasis">your</span> criteria.</h2>
           </div>
+          <div class="btn get-started" style="width: 200px;">Show me the tour</div>
+
         </div>
         <div class="col-lg-6 d-lg-flex flex-lg-column align-items-center order-1 order-lg-2 hero-img"
           data-aos="fade-up">
@@ -94,13 +98,13 @@
   <main id="main">
 
     <!-- ======= App Features Section ======= -->
-    <section id="features" class="features">
+    <section  class="features">
       <div class="container">
 
-        <div class="section-title justify-content-center">
+        <div class="section-title justify-content-center" id="PickingSubjectArea">
           <h2>I need to pick...</h2>
           <!-- placeholder="Type or choose one of the popular options" -->
-          <input type="text" name="name" class="form-control form-control-center picking-subject" id="picking-subject">
+          <input type="text" name="name" class="form-control form-control-center picking-subject" id="PickingSubject">
           <div style="margin: 5px;">
             <div class="get-started-btn suggested-category">House</div>
             <div class=" get-started-btn suggested-category">Car</div>
@@ -117,13 +121,14 @@
     </section>
 
     <section id="criteria" class="pricing">
-      <div class="container">
+      <div class="container" id="MainArea">
         <div class="row no-gutters">
 
-          <div class="col-lg-3 " id="criteria-panel">
+          <div class="col-lg-3 " id="CriteriaPanel">
             <div class="section-title justify-content-center">
               <h2>My criteria are...</h2>
-              <span class="hint">Type <span class="text-emphasis">your</span> criteria and assign it to the options you're considering</span>
+              <span class="hint">Type <span class="text-emphasis">your</span> criteria and assign it to the options
+                you"re considering</span>
             </div>
 
 
@@ -142,13 +147,13 @@
                     <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">Cost less than 1000$</span></li>
                     <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">USB-C</span></li>
                     <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">Android + Google</span></li>
-                    <span class="drop-hint" style="display: none;" >Drop to change the priority</span>
+                    <span class="drop-hint" style="display: none;">Drop to change the priority</span>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div class="criteria-box" >
+            <div class="criteria-box">
               <div class="m-1">
                 <div class="box">
                   <h2>It should...</h2>
@@ -161,16 +166,18 @@
                   </div>
                   <ul class="criteria-list criteria-definition" data-criteria-type="should">
                     <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-should">Wireless charging</span></li>
-                    <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-should">Great camera</span></li>
+                    <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-should">Great camera</span>
+                    </li>
                     <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-should">Battery over 4000mAh</span></li>
-                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-should">Physical Buttons</span></li>
-                    <span class="drop-hint" style="display: none;" >Drop to change the priority</span>
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-should">Physical
+                        Buttons</span></li>
+                    <span class="drop-hint" style="display: none;">Drop to change the priority</span>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div class="criteria-box" >
+            <div class="criteria-box">
               <div class="m-1">
                 <div class="box">
                   <h2>It could...</h2>
@@ -182,9 +189,11 @@
                     </div>
                   </div>
                   <ul class="criteria-list criteria-definition" data-criteria-type="could">
-                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-could">Snapdragon 865</span></li>
-                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-could">Cool design</span></li>
-                    <span class="drop-hint" style="display: none;" >Drop to change the priority</span>
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-could">Snapdragon 865</span>
+                    </li>
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-could">Cool design</span>
+                    </li>
+                    <span class="drop-hint" style="display: none;">Drop to change the priority</span>
                   </ul>
                 </div>
               </div>
@@ -212,7 +221,7 @@
 
           </div>
 
-          <div class="col-lg-9 options-panel">
+          <div class="col-lg-9 options-panel" id="OptionsPanel">
 
 
             <div class="section-title justify-content-center" >
@@ -235,180 +244,180 @@
             </div>
 
 
-            
-              
-                <div class="box  m-2">
-                  <div class="row mt-0">
 
-                    <div class="col-lg-3">
-                      <img src="https://image.freepik.com/free-psd/smartphone-mock-up-isolated_1310-1576.jpg"
-                        class="product-image" width="200" />
-                    </div>
-                    <div class="option col-lg-5">
-                      <h2>MyPhone XXL</h2>
-                      <span class="url">
-                        <a href="#">https://www.freepik.com/free-psd/smartphone-mock-.....</a>
-                      </span>
-                      
-                      <div>
-                        <span class="property">Price: </span>
-                        <span class="property-value">600$ </span>
-                        <div>
-                          <span class="property">Screen: </span>
-                          <span class="property-value">OLED</span>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="property">Battery: </span>
-                        <span class="property-value">3500mAh </span>
-                      </div>
-                      <div>
-                        <span class="property">More paramters: </span>
-                        <span class="property-value">Extracted from a shop by Picker.pro </span>
-                      </div>
-                    </div>
-                    <div class="option-criteria col-lg-4">
-                      <ul class="criteria-list criteria-met">
-                        <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-must">Cost less than 1000$</span></li>
-                        <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-must">USB-C</span></li>
-                        <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-should">Wireless charging</span></li>
-                        <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-should">Great camera</span></li>
-                        <span class="drop-hint" style="display: none;" >Drop here if criteria is met</span>
-                        <span class="remove-hint" style="display: none;" >Drop anywhere to remove</span>
-                      </ul>
+
+            <div class="box  m-2">
+              <div class="row mt-0">
+
+                <div class="col-lg-3">
+                  <img src="https://image.freepik.com/free-psd/smartphone-mock-up-isolated_1310-1576.jpg"
+                    class="product-image" width="200" />
+                </div>
+                <div class="option col-lg-5">
+                  <h2>MyPhone XXL</h2>
+                  <span class="url">
+                    <a href="#">https://www.freepik.com/free-psd/smartphone-mock-.....</a>
+                  </span>
+
+                  <div>
+                    <span class="property">Price: </span>
+                    <span class="property-value">600$ </span>
+                    <div>
+                      <span class="property">Screen: </span>
+                      <span class="property-value">OLED</span>
                     </div>
                   </div>
-                </div>
-
-              
-
-                <div class="box  m-2">
-                  <div class="row mt-0">
-                    <div class="col-lg-3">
-                      <img src="https://www.freevector.com/uploads/vector/preview/12139/FreeVector-HTC-Desire-Phone.jpg"
-                        class="product-image" width="200" />
-                    </div>
-                    <div class="option col-lg-5">
-                      <h2>Samyang S666</h2>
-                      <span class="url">
-                        <a href="#">https://www.freepik.com/free-psd/smartphone-mock-.....</a>
-                      </span>
-                    
-                      <div>
-                        <span class="property">Price: </span>
-                        <span class="property-value">1200$ </span>
-                        <div>
-                          <span class="property">Screen: </span>
-                          <span class="property-value">OLED</span>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="property">Battery: </span>
-                        <span class="property-value">4500mAh </span>
-                      </div>
-                      <div>
-                        <span class="property">More paramters: </span>
-                        <span class="property-value">Extracted from a shop by Picker.pro </span>
-                      </div>
-                    </div>
-                    <div class="option-criteria col-lg-4">
-                      <ul class="criteria-list criteria-met">
-                        <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">USB-C</span></li>
-                        <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">Android + Google</span></li>
-                        <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-should">Battery over 4000mAh</span></li>
-                        <span class="drop-hint" style="display: none;" >Drop here if criteria is met</span>
-                        <span class="remove-hint" style="display: none;" >Drop anywhere to remove</span>
-                      </ul>
-                    </div>
+                  <div>
+                    <span class="property">Battery: </span>
+                    <span class="property-value">3500mAh </span>
+                  </div>
+                  <div>
+                    <span class="property">More paramters: </span>
+                    <span class="property-value">Extracted from a shop by Picker.pro </span>
                   </div>
                 </div>
+                <div class="option-criteria col-lg-4">
+                  <ul class="criteria-list criteria-met">
+                    <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-must">Cost less than 1000$</span></li>
+                    <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-must">USB-C</span></li>
+                    <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-should">Wireless charging</span></li>
+                    <li><i class="bx bx-check"></i> <span class="badge  badge-criteria badge-should">Great camera</span></li>
+                    <span class="drop-hint" style="display: none;" >Drop here if criteria is met</span>
+                    <span class="remove-hint" style="display: none;" >Drop anywhere to remove</span>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
-                <div class="box  m-2">
-                  <div class="row mt-0">
-                    <div class="col-lg-3">
-                      <img src="https://www.freevector.com/uploads/vector/preview/1631/FreeVector-Motorola-Phone.jpg"
-                        class="product-image" width="200" />
-                    </div>
-                    <div class="option col-lg-5">
-                      <h2>Fotorola Mold</h2>
-                      <span class="url">
-                        <a href="#">https://www.freepik.com/free-psd/smartphone-mock-.....</a>
-                      </span>
-                     
-                      <div>
-                        <span class="property">Price: </span>
-                        <span class="property-value">200$ </span>
-                        <div>
-                          <span class="property">Screen: </span>
-                          <span class="property-value">TFT</span>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="property">Battery: </span>
-                        <span class="property-value">1200mAh </span>
-                      </div>
-                      <div>
-                        <span class="property">More paramters: </span>
-                        <span class="property-value">Extracted from a shop by Picker.pro </span>
-                      </div>
-                    </div>
-                    <div class="option-criteria col-lg-4">
-                      <ul class="criteria-list criteria-met">
-                        <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">Cost less than 1000$</span></li>
-                        <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-should">Physical Buttons</span></li>
-                        <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-could">Cool design</span></li>
-                        <span class="drop-hint" style="display: none;" >Drop here if criteria is met</span>
-                        <span class="remove-hint" style="display: none;" >Drop anywhere to remove</span>
-                      </ul>
+
+
+            <div class="box  m-2">
+              <div class="row mt-0">
+                <div class="col-lg-3">
+                  <img src="https://www.freevector.com/uploads/vector/preview/12139/FreeVector-HTC-Desire-Phone.jpg"
+                    class="product-image" width="200" />
+                </div>
+                <div class="option col-lg-5">
+                  <h2>Samyang S666</h2>
+                  <span class="url">
+                    <a href="#">https://www.freepik.com/free-psd/smartphone-mock-.....</a>
+                  </span>
+
+                  <div>
+                    <span class="property">Price: </span>
+                    <span class="property-value">1200$ </span>
+                    <div>
+                      <span class="property">Screen: </span>
+                      <span class="property-value">OLED</span>
                     </div>
                   </div>
-                </div>
-
-                <div class="box m-2">
-                  <div class="row mt-0">
-                    <div class="col-lg-3">
-                      <img src="https://www.freevector.com/uploads/vector/preview/16038/FreeVector-Smart-Phone-Render.jpg"
-                        class="product-image" width="200" />
-                    </div>
-                    <div class="option col-lg-5">
-                      <h2>Nookia 3311</h2>
-                      <span class="url">
-                        <a href="#">https://www.freepik.com/free-psd/smartphone-mock-.....</a>
-                      </span>
-                      
-                      <div>
-                        <span class="property">Price: </span>
-                        <span class="property-value">999$ </span>
-                        <div>
-                          <span class="property">Screen: </span>
-                          <span class="property-value">QLED</span>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="property">Battery: </span>
-                        <span class="property-value">4100mAh </span>
-                      </div>
-                      <div>
-                        <span class="property">More paramters: </span>
-                        <span class="property-value">Extracted from a shop by Picker.pro </span>
-                      </div>
-                    </div>
-                    <div class="option-criteria col-lg-4">
-                      <ul class="criteria-list criteria-met">
-                        <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">USB-C</span></li>
-                        <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">Android + Google</span></li>
-                        <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">Cost less than 1000$</span></li>
-                        <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-should">Great camera</span></li>
-                        <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-could">Snapdragon 865</span></li>
-                        <span class="drop-hint" style="display: none;" >Drop here if criteria is met</span>
-                        <span class="remove-hint" style="display: none;" >Drop anywhere to remove</span>
-                      </ul>
-                    </div>
+                  <div>
+                    <span class="property">Battery: </span>
+                    <span class="property-value">4500mAh </span>
+                  </div>
+                  <div>
+                    <span class="property">More paramters: </span>
+                    <span class="property-value">Extracted from a shop by Picker.pro </span>
                   </div>
                 </div>
-            
+                <div class="option-criteria col-lg-4">
+                  <ul class="criteria-list criteria-met">
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">USB-C</span></li>
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">Android + Google</span></li>
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-should">Battery over 4000mAh</span></li>
+                    <span class="drop-hint" style="display: none;" >Drop here if criteria is met</span>
+                    <span class="remove-hint" style="display: none;" >Drop anywhere to remove</span>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
-   
+            <div class="box  m-2">
+              <div class="row mt-0">
+                <div class="col-lg-3">
+                  <img src="https://www.freevector.com/uploads/vector/preview/1631/FreeVector-Motorola-Phone.jpg"
+                    class="product-image" width="200" />
+                </div>
+                <div class="option col-lg-5">
+                  <h2>Fotorola Mold</h2>
+                  <span class="url">
+                    <a href="#">https://www.freepik.com/free-psd/smartphone-mock-.....</a>
+                  </span>
+
+                  <div>
+                    <span class="property">Price: </span>
+                    <span class="property-value">200$ </span>
+                    <div>
+                      <span class="property">Screen: </span>
+                      <span class="property-value">TFT</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="property">Battery: </span>
+                    <span class="property-value">1200mAh </span>
+                  </div>
+                  <div>
+                    <span class="property">More paramters: </span>
+                    <span class="property-value">Extracted from a shop by Picker.pro </span>
+                  </div>
+                </div>
+                <div class="option-criteria col-lg-4">
+                  <ul class="criteria-list criteria-met">
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">Cost less than 1000$</span></li>
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-should">Physical Buttons</span></li>
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-could">Cool design</span></li>
+                    <span class="drop-hint" style="display: none;" >Drop here if criteria is met</span>
+                    <span class="remove-hint" style="display: none;" >Drop anywhere to remove</span>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="box m-2">
+              <div class="row mt-0">
+                <div class="col-lg-3">
+                  <img src="https://www.freevector.com/uploads/vector/preview/16038/FreeVector-Smart-Phone-Render.jpg"
+                    class="product-image" width="200" />
+                </div>
+                <div class="option col-lg-5">
+                  <h2>Nookia 3311</h2>
+                  <span class="url">
+                    <a href="#">https://www.freepik.com/free-psd/smartphone-mock-.....</a>
+                  </span>
+
+                  <div>
+                    <span class="property">Price: </span>
+                    <span class="property-value">999$ </span>
+                    <div>
+                      <span class="property">Screen: </span>
+                      <span class="property-value">QLED</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="property">Battery: </span>
+                    <span class="property-value">4100mAh </span>
+                  </div>
+                  <div>
+                    <span class="property">More paramters: </span>
+                    <span class="property-value">Extracted from a shop by Picker.pro </span>
+                  </div>
+                </div>
+                <div class="option-criteria col-lg-4">
+                  <ul class="criteria-list criteria-met">
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">USB-C</span></li>
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">Android + Google</span></li>
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-must">Cost less than 1000$</span></li>
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-should">Great camera</span></li>
+                    <li><i class="bx bx-check"></i> <span class="badge badge-criteria badge-could">Snapdragon 865</span></li>
+                    <span class="drop-hint" style="display: none;" >Drop here if criteria is met</span>
+                    <span class="remove-hint" style="display: none;" >Drop anywhere to remove</span>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+
           </div>
 
         </div>
@@ -417,27 +426,40 @@
 
 
     <!-- Modal -->
-<div class="modal fade" id="ConfirmCriteriaRemovalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Remove criteria</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Do you want to remove the criteria from your list and from all the products?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary"  data-dismiss="modal">No, keep it</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Yes, remove</button>
+    <div class="modal fade" id="ConfirmCriteriaRemovalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Remove criteria</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Do you want to remove the criteria from your list and from all the products?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"  data-dismiss="modal">No, keep it</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Yes, remove</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-
+    <div id="TourTemplate">
+      <div class="popover tour">
+        <div class="arrow"></div>
+        <h3 class="popover-title"></h3>
+        <div class="popover-content"></div>
+        <div class="popover-navigation">
+          <button class="btn btn-default" data-role="prev">« Prev</button>
+          <span data-role="separator">|</span>
+          <button class="btn btn-default" data-role="next">Next »</button>
+          <button class="btn btn-default" data-role="end">End tour</button>
+        </div>
+      </div>
+    </div>
+ 
 
 
   </main><!-- End #main -->
@@ -519,10 +541,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"
     integrity="sha512-9UR1ynHntZdqHnwXKTaOm1s6V9fExqejKvg5XMawEMToW4sSw+3jtLrYfZPijvnwnnE8Uol1O9BcAskoxgec+g=="
     crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js" integrity="sha512-NgXVRE+Mxxf647SqmbB9wPS5SEpWiLFp5G7ItUNFi+GVUyQeP+7w4vnKtc2O/Dm74TpTFKXNjakd40pfSKNulg==" crossorigin="anonymous"></script>
-  <!-- Template Main JS File -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js" integrity="sha512-NgXVRE+Mxxf647SqmbB9wPS5SEpWiLFp5G7ItUNFi+GVUyQeP+7w4vnKtc2O/Dm74TpTFKXNjakd40pfSKNulg==" crossorigin="anonymous"></script>
+<!-- Template Main JS File -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/driver.js/0.9.8/driver.min.js" integrity="sha512-TMCPpR1wPPr92/7kiF88j9uTWczLpHyUTzt8sScGyN2btq/xWN22GjsdgNfUIMDtXV5WXUZ4s2OThcgpVxQv4w==" crossorigin="anonymous"></script>
+
   <script src="assets/js/main.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="assets/js/tour.js"></script>
+
+
 
 </body>
 

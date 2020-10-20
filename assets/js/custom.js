@@ -1,15 +1,16 @@
 $(document).ready(function () {
-  $('#picking-subject').tagsinput({
+  $('#PickingSubject').tagsinput({
     tagClass: 'get-started-btn suggested-category'
   });
-
+ 
+  $('#InitialInfoModal').modal();
 
   $('.suggested-category').click(function () {
-    $('#picking-subject').tagsinput('removeAll');
-    $('#picking-subject').tagsinput('add', $(this).text());
+    $('#PickingSubject').tagsinput('removeAll');
+    $('#PickingSubject').tagsinput('add', $(this).text());
   });
 
-  $('#picking-subject').tagsinput('add', 'Smartphone');
+  $('#PickingSubject').tagsinput('add', 'Smartphone');
 
   $('.add-criteria').click(function () {
     let input = $(this).closest('.input-group').find('input');
