@@ -11,6 +11,21 @@ $(document).ready(function () {
   // Define the steps for introduction
   driver.defineSteps([
     {
+      element: '#header',
+      popover: {
+        title: 'Disclaimer',
+        description: 'This is an interactive <strong>demo</strong> site.<br/><br/>You are buying a new smartphone.' +
+          '<br/>Your read tons of reviews, blog posts and ads, you now need to <strong> pick just one </strong>out of several intersting models...' +
+          '<br/><br/>Picker.pro is here to help!' +
+          '<br/><br/><strong>See how!</strong>' +
+          '<br/><br/><p class="font-italic">Take the 60 seconds tour</p>',
+        position: 'bottom-center'
+      },
+      onNext: function (el) {
+        moveToStep(driver, 1);
+      }
+    },
+    {
       element: '#PickingSubjectArea',
       popover: {
         title: 'Step One',
@@ -18,9 +33,8 @@ $(document).ready(function () {
         position: 'top-center'
       },
       onNext: function (el) {
-        moveToStep(driver, 1);
+        moveToStep(driver, 2);
       },
-
     },
     {
       element: '#CriteriaPanel',
@@ -30,29 +44,29 @@ $(document).ready(function () {
         position: 'top-center'
       },
       onNext: function (el) {
-        moveToStep(driver,2);
+        moveToStep(driver, 3);
       },
     },
     {
       element: '#InputMust',
       popover: {
         title: "Hint",
-        description: "You can add some more criteria!",
+        description: "<p class='font-italic'>You can add some more criteria!<p>",
         position: 'top-center'
       }
       , onNext: function (el) {
-        moveToStep(driver,3);
+        moveToStep(driver, 4);
       },
     },
     {
       element: '#CriteriaListMust',
       popover: {
         title: "Hint",
-        description: "... or drag them to change their priority,<br/>or even drop outside to remove them!",
+        description: "<p class='font-italic'>... or drag them to change their priority,<br/>or even drop outside to remove them!</p>",
         position: 'top-center'
       }
       , onNext: function (el) {
-        moveToStep(driver,4);
+        moveToStep(driver, 5);
       },
     },
     {
@@ -63,7 +77,7 @@ $(document).ready(function () {
         position: 'top-center'
       }
       , onNext: function (el) {
-        moveToStep(driver,5);
+        moveToStep(driver, 6);
       },
     },
 
@@ -71,23 +85,23 @@ $(document).ready(function () {
       element: "#InputOption",
       popover: {
         title: "Hint",
-        description: "You can add some more, but in the <strong>demo</strong> site, the images will be random :)",
+        description: "<p class='font-italic'>You can add some more 'products', but in the <strong>demo</strong> site, the images & data will be random :)</p>",
         position: 'top-center'
       }
       , onNext: function (el) {
-        moveToStep(driver,6);
+        moveToStep(driver, 7);
       },
     },
     {
       element: "#MainArea",
       popover: {
         title: "Step four",
-        description: "Finally, yoy dragged & dropped the matching criteria to the products...<br/> " +
+        description: "Finally, you dragged & dropped the matching criteria to the products...<br/> " +
           "and now you easily see which phones meet most of your criteria!",
         position: 'top-center'
       }
       , onNext: function (el) {
-        moveToStep(driver,7);
+        moveToStep(driver, 8);
       },
     },
     {
@@ -107,7 +121,7 @@ $(document).ready(function () {
         position: 'top-center'
       }
       , onNext: function (el) {
-        moveToStep(driver,8);
+        moveToStep(driver, 9);
       },
     }
   ]);
@@ -126,12 +140,12 @@ $(document).ready(function () {
   });
 });
 
-function moveToStep(driver, step){
+function moveToStep(driver, step) {
   driver.preventMove();
   setCookie('tourStep', step);
-  if (step < 8){
-    driver.start(step );
-  } else{
+  if (step < 9) {
+    driver.start(step);
+  } else {
     driver.reset();
   }
 
