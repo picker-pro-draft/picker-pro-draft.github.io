@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-  color: #7b94c9;
+  color: #00a906;
   text-decoration: none;
 }
 
@@ -151,9 +151,18 @@ h1, h2, h3, h4, h5, h6 {
   left: 8px;
 }
 
+.list-within-accordion li{
+  padding: 5px !important;
+  background: #fff;
+  margin: 1px 25px !important;
+  border-radius: 4px;
+  position: relative;
+  list-style-type: circle !important;
+}
+
 .back-to-top:hover {
   color: #fff;
-  background: #748ec6;
+  background: #089e03;
   transition: background 0.2s ease-in-out;
 }
 
@@ -239,8 +248,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 15px;
   padding: 10px 25px;
 }
+
 .btn.get-started:hover {
-  background: #0c6109;
+  background: #089e03;
   color: #fff;
 }
 
@@ -261,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu .get-started a:hover {
-  background: #0c6109;
+  background: #089e03;
   color: #fff;
 }
 
@@ -554,13 +564,18 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
-section {
+section.app-section {
   padding: 5px 0;
   overflow: hidden;
 }
 
+section {
+  padding: 60px;
+  overflow: hidden;
+}
+
 .section-bg {
-  background-color: #f2f5fa;
+  background-color: #e8f5e9;
 }
 
 .section-title {
@@ -909,11 +924,11 @@ section {
 }
 
 .get-started-btn {
-  background: #476e51;
+  background: #107e0c;
   display: inline-block;
   padding: 6px 30px;
   border-radius: 20px;
-  color: #fff;
+  color: #fff !important;
   transition: none;
   font-size: 14px;
   font-weight: 400;
@@ -921,21 +936,24 @@ section {
   transition: 0.3s;
 }
 
-.pricing .get-started-btn:hover {
-  background: #107e0c;
+.get-started-btn:hover {
+  background: #139b0e ;
 }
+
 
 .pricing .featured {
   z-index: 10;
   margin: -30px -5px 0 -5px;
 }
 
-.get-started-btn {
-  background: #107e0c;
+
+
+.pricing .featured .get-started-btn {
+  background: #0fa90a;
 }
 
 .pricing .featured .get-started-btn:hover {
-  background: #748ec6;
+  background: #55bd47;
 }
 
 @media (max-width: 992px) {
@@ -998,7 +1016,7 @@ section {
   position: absolute;
   right: 0;
   left: 20px;
-  color: #b1c0df;
+  color: #31ab1b80;
 }
 
 .faq .accordion-list .icon-show, .faq .accordion-list .icon-close {
@@ -1018,7 +1036,7 @@ section {
 }
 
 .faq .accordion-list a.collapsed {
-  color: #343a40;
+  color: #344034;
 }
 
 .faq .accordion-list a.collapsed:hover {
@@ -1044,7 +1062,7 @@ section {
 --------------------------------------------------------------*/
 .contact .info {
   padding: 20px 40px;
-  background: #f1f3f6;
+  background: #dce6dd94;
   color: #476e51;
   text-align: center;
   border: 1px solid #fff;
@@ -1252,7 +1270,7 @@ section {
 }
 
 #footer .footer-newsletter form input[type="submit"]:hover {
-  background: #415f9d;
+  background: #089e03;
 }
 
 #footer .footer-top {
@@ -1344,7 +1362,7 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #27282c;
+  background: #089e03;
   color: #fff;
   text-decoration: none;
 }
