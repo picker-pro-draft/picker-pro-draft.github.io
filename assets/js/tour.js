@@ -14,7 +14,7 @@ $(document).ready(function () {
       element: '#header',
       popover: {
         title: 'Disclaimer',
-        description: 'This is an interactive <strong>demo</strong> site.<br/><br/>You are buying a new smartphone.' +
+        description: 'This is an interactive <strong>demo</strong> site. <br/><br/>Imagine that...<br/><br/>You are buying a new smartphone.' +
           '<br/>Your read tons of reviews, blog posts and ads, you now need to <strong> pick just one </strong>out of several intersting models...' +
           '<br/><br/>Picker.pro is here to help!' +
           '<br/><br/><strong>See how!</strong>' +
