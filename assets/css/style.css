@@ -17,6 +17,10 @@ a {
   color: #107e0c;
 }
 
+.bx-xs{
+  vertical-align: middle;
+}
+
 a:hover {
   color: #00a906;
   text-decoration: none;
@@ -132,6 +136,19 @@ h1, h2, h3, h4, h5, h6 {
   color: #107e0c;
 }
 
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: transparent;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -215,6 +232,11 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 40px;
 }
 
+.badge-must-see {
+  background-color: #ffd036;
+  color: black;
+  font-size: 90%;
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -278,6 +300,11 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu .get-started a:hover {
   background: #089e03;
   color: #fff;
+}
+
+.nav-menu .get-started-outline{
+  border-radius: 50px;
+  border: solid 1px ;
 }
 
 .nav-menu .drop-down ul {

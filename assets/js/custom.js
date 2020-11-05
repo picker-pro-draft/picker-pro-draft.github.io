@@ -264,10 +264,18 @@ function isAssigingCriteriaToOption(source, target) {
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("header").style.top = "0";
-  } else {
-    document.getElementById("header").style.top = "-50px";
+  let header = document.getElementsByClassName("header-hideable")[0];
+  if (header){
+    if (prevScrollpos > currentScrollPos) {
+      header.style.top = "0";
+    } else {
+      header.style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
   }
-  prevScrollpos = currentScrollPos;
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("PageProgressBar").style.width = scrolled + "%";
 }
+
