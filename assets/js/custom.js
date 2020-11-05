@@ -260,12 +260,12 @@ function isAssigingCriteriaToOption(source, target) {
   }
   return false;
 }
-
+var surveyReminderClosed = false;
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
   let header = document.getElementsByClassName("header-hideable")[0];
-  if (header){
+  if (header) {
     if (prevScrollpos > currentScrollPos) {
       header.style.top = "0";
     } else {
@@ -277,5 +277,21 @@ window.onscroll = function () {
   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   let scrolled = (winScroll / height) * 100;
   document.getElementById("PageProgressBar").style.width = scrolled + "%";
+
+  if (!surveyReminderClosed) {
+
+    var surveyReminderTop = $("#SurveyReminderTrigger").offset().top;
+    if (currentScrollPos > surveyReminderTop) {
+      $("#SurveyReminder").fadeIn(500);
+    }
+  }
+
+  $('.callout-closebtn').click(function(){
+    surveyReminderClosed = true;
+    $("#SurveyReminder").fadeOut(500);
+  });
 }
+
+
+
 
