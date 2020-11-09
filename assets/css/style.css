@@ -114,6 +114,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 5px;
 }
 
+.criteria-list{
+  border: 3px dotted transparent;
+    border-radius: 5%;
+}
+
 .drop-area-active{
   border: 3px dotted #cacaca;
     border-radius: 5%;

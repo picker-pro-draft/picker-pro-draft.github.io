@@ -79,6 +79,10 @@ $(document).ready(function () {
         $('.remove-hint').fadeIn();
         $(source).find('.drop-hint-initial').hide();
       }
+    })
+    .on('dragend', function (el, source) {
+      $('.criteria-met, .criteria-definition').removeClass('drop-area-active');
+      
     });
 });
 
