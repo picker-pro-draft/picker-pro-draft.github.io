@@ -106,16 +106,22 @@ function addOption(addButton) {
   $('#OptionsList').prepend(template);
   $(template).show();
 
-  // $(template).find(".option-url > a").text(input.val());
-  // $.get("https://uzby.com/api.php?min=6&max=12", function (data) {
 
-  let title = $(template).find(".option-title");
-  title.text(input.val());
-  // });
+    let url = $(template).find('.option-url > a');
+    url.text(input.val());
 
+     $.get("http://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&minCorpusCount=1&minLength=5&maxLength=5&limit=2&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5", function( response ){
+       
+     let text = response[0].word +' '+ response[1].word;
+       let title = $(template).find(".option-title");
+       title.text(text);
+    });
+  
+
+
+     
   $(input).val('');
 }
-
 
 function showEmptyDropPlace() {
   $('.criteria-met, .criteria-definition').removeClass('drop-area-active');
@@ -276,7 +282,11 @@ window.onscroll = function () {
   let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   let scrolled = (winScroll / height) * 100;
-  document.getElementById("PageProgressBar").style.width = scrolled + "%";
+  let progressBar = document.getElementById("PageProgressBar");
+  if (progressBar){
+    progressBar.style.width = scrolled + "%";
+  }
+  
 
   if (!surveyReminderClosed) {
 
