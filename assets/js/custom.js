@@ -5,6 +5,8 @@ $(document).ready(function () {
 
   $('#InitialInfoModal').modal();
 
+  autosize($('textarea'));
+
   $('.remove-option').on("click", function () {
     removeOption(this);
   });
@@ -109,6 +111,8 @@ function addOption(addButton) {
 
   $('#OptionsList').prepend(template);
   $(template).show();
+
+  autosize( $(template).find('textarea'));
 
 
     let url = $(template).find('.option-url > a');
